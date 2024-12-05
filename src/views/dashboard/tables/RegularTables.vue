@@ -1,7 +1,16 @@
 <template>
   <v-container id="regular-tables" fluid tag="section">
-    <base-v-component heading="Simple Tables" link="components/simple-tables" />
-
+    <!-- <base-v-component heading="Simple Tables" link="components/simple-tables" /> -->
+    <v-col
+      cols="12"
+      offset="6"
+      md="6"
+    >
+      <v-text-field
+        label="First Name"
+        class="purple-input"
+      />
+    </v-col>
     <base-material-card
       icon="mdi-clipboard-text"
       title="Simple Table"
