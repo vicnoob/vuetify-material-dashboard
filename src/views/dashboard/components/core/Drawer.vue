@@ -112,7 +112,7 @@
           to: '/',
         },
         {
-          icon: 'mdi-account',
+          icon: 'mdi-alarm',
           title: 'user',
           to: '/pages/user',
         },

@@ -19,12 +19,11 @@
       <v-simple-table>
         <thead>
           <tr>
-            <th>Image</th>
+            <th class="primary--text">Ảnh</th>
             <th class="primary--text">ID</th>
-            <th class="primary--text">Name</th>
-            <th class="primary--text">Country</th>
-            <th class="primary--text">City</th>
-            <th class="text-right primary--text">Salary</th>
+            <th class="primary--text">Địa chỉ</th>
+            <th class="primary--text">Diện tích</th>
+            <th class="primary--text">Mục đích sử dụng</th>
           </tr>
         </thead>
 
@@ -34,10 +33,10 @@
               <v-img :width="30" :height="30" :src="item.img" />
             </td>
             <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
+            <td>{{ item.id }}</td>
             <td>{{ item.address }}</td>
-            <td>{{ item.nationality }}</td>
-            <td class="text-right">{{ item.salary }}</td>
+            <td>{{ item.area }}</td>
+            <td>{{ item.purpose }}</td>
           </tr>
         </tbody>
       </v-simple-table>
@@ -45,35 +44,6 @@
 
     <div class="py-3" />
 
-    <base-material-card
-      color="success"
-      dark
-      icon="mdi-clipboard-plus"
-      title="Table on Dark Background"
-      class="px-5 py-3"
-    >
-      <v-simple-table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Country</th>
-            <th>City</th>
-            <th class="text-right">Salary</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr v-for="item in dataTable" :key="item.id">
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.address }}</td>
-            <td>{{ item.nationality }}</td>
-            <td class="text-right">{{ item.salary }}</td>
-          </tr>
-        </tbody>
-      </v-simple-table>
-    </base-material-card>
   </v-container>
 </template>
 
@@ -111,6 +81,14 @@
           address: 'Tam Trinh',
           nationality: 'Viet Nam',
           salary: '1000$',
+        },
+        {
+          id: 4,
+          name: 'TNH',
+          age: 21,
+          address: 'CT1-X2 Bac Linh Dam',
+          nationality: 'Viet Nam',
+          salary: '3000$',
         },
       ],
     }),
