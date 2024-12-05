@@ -79,8 +79,8 @@
     <template v-slot:append>
       <base-item
         :item="{
-          title: $t('upgrade'),
-          icon: 'mdi-package-up',
+          title: 'Logout',
+          icon: 'mdi-logout',
           to: '/upgrade',
         }"
       />
@@ -111,36 +111,41 @@
           title: 'dashboard',
           to: '/',
         },
+        // {
+        //   icon: 'mdi-alarm',
+        //   title: 'user',
+        //   to: '/pages/user',
+        // },
         {
-          icon: 'mdi-alarm',
-          title: 'user',
-          to: '/pages/user',
-        },
-        {
-          title: 'rtables',
           icon: 'mdi-clipboard-outline',
+          title: 'Danh sách đất',
           to: '/tables/regular-tables',
         },
         {
-          title: 'typography',
-          icon: 'mdi-format-font',
+          title: 'Thêm mới thửa đất',
+          icon: 'mdi-plus',
           to: '/components/typography',
         },
         {
-          title: 'icons',
-          icon: 'mdi-chart-bubble',
-          to: '/components/icons',
+          title: 'Thống kê',
+          icon: 'mdi-chart-arc',
+          to: '/components/typography',
         },
-        {
-          title: 'google',
-          icon: 'mdi-map-marker',
-          to: '/maps/google-maps',
-        },
-        {
-          title: 'notifications',
-          icon: 'mdi-bell',
-          to: '/components/notifications',
-        },
+        // {
+        //   title: 'icons',
+        //   icon: 'mdi-chart-bubble',
+        //   to: '/components/icons',
+        // },
+        // {
+        //   title: 'google',
+        //   icon: 'mdi-map-marker',
+        //   to: '/maps/google-maps',
+        // },
+        // {
+        //   title: 'notifications',
+        //   icon: 'mdi-bell',
+        //   to: '/components/notifications',
+        // },
       ],
     }),
 
@@ -160,7 +165,7 @@
       profile () {
         return {
           avatar: true,
-          title: this.$t('avatar'),
+          title: 'Admin 01',
         }
       },
     },
