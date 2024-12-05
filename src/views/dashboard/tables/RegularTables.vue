@@ -19,6 +19,7 @@
       <v-simple-table>
         <thead>
           <tr>
+            <th>Image</th>
             <th class="primary--text">ID</th>
             <th class="primary--text">Name</th>
             <th class="primary--text">Country</th>
@@ -29,6 +30,9 @@
 
         <tbody>
           <tr v-for="item in dataTable" :key="item.id">
+            <td>
+              <v-img :width="30" :height="30" :src="item.img" />
+            </td>
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.address }}</td>
@@ -85,6 +89,7 @@
       dataTable: [
         {
           id: 1,
+          img: 'https://media.istockphoto.com/id/1973365581/vector/sample-ink-rubber-stamp.jpg?s=612x612&w=0&k=20&c=_m6hNbFtLdulg3LK5LRjJiH6boCb_gcxPvRLytIz0Ws=',
           name: 'TQG',
           age: 21,
           address: 'CT1-X2 Bac Linh Dam',
