@@ -4,13 +4,22 @@
     <v-col
       cols="12"
       offset="6"
+      class="text-right clickable"
+      @click="goToAddPage"
       md="6"
     >
-    
+      <v-icon
+        small
+        color="success"
+        class="ml-2 text-right"
+      >
+        mdi-plus
+      </v-icon>
+      Thêm
     </v-col>
     <base-material-card
       icon="mdi-clipboard-text"
-      title="Danh sách các mảnh đất thuộc địa bàn phường Hoàng Liệt"
+      title="Danh sách các mảnh đất"
       class="px-5 py-3"
     >
       <v-simple-table>
@@ -21,7 +30,9 @@
             <th class="primary--text">Địa chỉ</th>
             <th class="primary--text">Diện tích</th>
             <th class="primary--text">Mục đích sử dụng</th>
-            <th class="primary--text">Hành động</th>
+            <th class="primary--text">Hành động
+
+            </th>
           </tr>
         </thead>
 
@@ -100,37 +111,37 @@
         {
           id: 1,
           img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'CT1-X2 Bac Linh Dam',
-          area: '2000 m2',
-          purpose: 'Đất ở',
+          address: 'No.5 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
+          area: '100 m2',
+          purpose: 'residential',
         },
         {
           id: 2,
           img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'Lô 12B2 xã Trường Hà',
-          area: '3000 m2',
-          purpose: 'Nông nghiệp',
+          address: 'No.7 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
+          area: '100 m2',
+          purpose: 'public service',
         },
         {
           id: 3,
           img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: '278 tổ 11 phường Sông Bằng',
-          area: '500 m2',
-          purpose: 'Đất ở',
+          address: 'No.9 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
+          area: '70 m2',
+          purpose: 'residential',
         },
         {
           id: 4,
           img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'CT5-X10 HH Linh Dam',
-          area: '2000 m2',
-          purpose: 'Công nghiệp',
+          address: 'No.2 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
+          area: '70 m2',
+          purpose: 'commercial',
         },
         {
           id: 5,
           img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'CT1-X2 Bac Linh Dam',
-          area: '2000 m2',
-          purpose: 'Nông nghiệp',
+          address: 'No.4 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
+          area: '70 m2',
+          purpose: 'residential',
         },
       ],
       deleteDialog: {
@@ -153,7 +164,18 @@
         // Xóa item khỏi danh sách
         this.dataTable = this.dataTable.filter(i => i.id !== item.id);
         this.deleteDialog.visible = false;
-      }
+      },
+      goToAddPage() {
+      // Sử dụng $router của Vue Router để chuyển hướng
+      this.$router.push('/pages/add-new');
+    }
     },
   };
 </script>
+
+<style lang="scss">
+.clickable {
+  cursor: pointer;
+}
+
+</style>

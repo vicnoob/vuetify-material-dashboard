@@ -124,12 +124,12 @@
         {
           title: 'Thêm mới thửa đất',
           icon: 'mdi-plus',
-          to: '/components/typography',
+          to: '/pages/add-new',
         },
         {
           title: 'Thống kê',
           icon: 'mdi-chart-arc',
-          to: '/components/typography',
+          to: '/components/icons',
         },
         // {
         //   title: 'icons',

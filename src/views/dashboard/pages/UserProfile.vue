@@ -7,16 +7,12 @@
     <v-row justify="center">
       <v-col
         cols="12"
-        md="8"
+        md="12"
       >
         <base-material-card>
           <template v-slot:heading>
             <div class="display-2 font-weight-light">
-              Edit Profile
-            </div>
-
-            <div class="subtitle-1 font-weight-light">
-              Complete your profile
+              Thông tin mảnh đất
             </div>
           </template>
 
@@ -25,30 +21,10 @@
               <v-row>
                 <v-col
                   cols="12"
-                  md="4"
+                  md="12"
                 >
                   <v-text-field
-                    label="Company (disabled)"
-                    disabled
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    class="purple-input"
-                    label="User Name"
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    label="Email Address"
+                    label="Địa chỉ"
                     class="purple-input"
                   />
                 </v-col>
@@ -58,7 +34,7 @@
                   md="6"
                 >
                   <v-text-field
-                    label="First Name"
+                    label="Diện tích"
                     class="purple-input"
                   />
                 </v-col>
@@ -68,53 +44,69 @@
                   md="6"
                 >
                   <v-text-field
-                    label="Last Name"
+                    label="Mục đích sử dụng"
                     class="purple-input"
                   />
                 </v-col>
 
                 <v-col cols="12">
                   <v-text-field
-                    label="Adress"
+                    label="Link ảnh"
                     class="purple-input"
                   />
                 </v-col>
 
                 <v-col
                   cols="12"
-                  md="4"
+                  md="12"
                 >
                   <v-text-field
-                    label="City"
+                    label="Tình trạng pháp lý"
                     class="purple-input"
                   />
                 </v-col>
 
                 <v-col
                   cols="12"
-                  md="4"
+                  md="6"
                 >
                   <v-text-field
-                    label="Country"
+                    label="Tên chủ sở hữu"
                     class="purple-input"
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
-                  md="4"
+                  md="6"
                 >
                   <v-text-field
+                    label="CCCD"
                     class="purple-input"
-                    label="Postal Code"
-                    type="number"
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="6"
+                >
+                  <v-text-field
+                    label="Ngày Sinh"
+                    class="purple-input"
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="6"
+                >
+                  <v-text-field
+                    label="Số điện thoại"
+                    class="purple-input"
                   />
                 </v-col>
 
                 <v-col cols="12">
                   <v-textarea
                     class="purple-input"
-                    label="About Me"
+                    label="Mô tả"
                     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                   />
                 </v-col>
@@ -127,7 +119,7 @@
                     color="success"
                     class="mr-0"
                   >
-                    Update Profile
+                    Lưu
                   </v-btn>
                 </v-col>
               </v-row>
@@ -136,7 +128,7 @@
         </base-material-card>
       </v-col>
 
-      <v-col
+      <!-- <v-col
         cols="12"
         md="4"
       >
@@ -166,7 +158,7 @@
             </v-btn>
           </v-card-text>
         </base-material-card>
-      </v-col>
+      </v-col> -->
     </v-row>
   </v-container>
 </template>
