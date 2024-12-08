@@ -20,8 +20,13 @@ import './plugins/chartist'
 import './plugins/vee-validate'
 import vuetify from './plugins/vuetify'
 import i18n from './i18n'
+import ToastPlugin from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 Vue.config.productionTip = false
+Vue.use(ToastPlugin, {
+  position: 'top'
+});
 
 new Vue({
   router,

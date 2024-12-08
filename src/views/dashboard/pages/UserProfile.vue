@@ -187,10 +187,12 @@
             id: this.landList.length + 1,
             ...this.info
           })
+          this.$toast.success('Bạn đã thêm mới thửa đất thành công')
         } else {
           this.editLand(
             this.info
           )
+          this.$toast.success('Bạn đã cập nhật thông tin thành công')
         }
         this.$router.push('/tables/regular-tables');
       },
