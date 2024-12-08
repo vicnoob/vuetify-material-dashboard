@@ -118,6 +118,7 @@
       }),
       editItem(item) {
         console.log('Editing item:', item);
+        this.$router.push({ name: 'Edit land info', params: { id: item.id } });
       },
       showDeleteDialog(item) {
         this.deleteDialog.visible = true;

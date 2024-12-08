@@ -144,7 +144,7 @@
                 >
                   <v-btn
                     color="success"
-                    @click="addNewItem()"
+                    @click="save()"
                     class="mr-0"
                   >
                     Lưu
@@ -163,17 +163,35 @@
   import { mapState, mapMutations } from 'vuex'
   export default {
     computed: {
-    ...mapState(['landList']),
+      ...mapState(['landList']),
+      landId() {
+        return this.$route.params.id;
+      },
+    },
+    mounted() {
+      if (this.landId) {
+        const landInfo = this.landList.find(item => item.id == this.landId)
+        this.info = {
+          ...landInfo
+        }
+      }
     },
     methods: {
       ...mapMutations({
         addNewLand: 'ADD_NEW_LAND',
+        editLand: 'EDIT_LAND_INFO',
       }),
-      addNewItem() {
-        this.addNewLand({
-          id: this.landList.length + 1,
-          ...this.info
-        })
+      save() {
+        if (!this.landId) {
+          this.addNewLand({
+            id: this.landList.length + 1,
+            ...this.info
+          })
+        } else {
+          this.editLand(
+            this.info
+          )
+        }
         this.$router.push('/tables/regular-tables');
       },
     },

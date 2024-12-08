@@ -19,8 +19,13 @@ export default new Router({
         },
         // Pages
         {
-          name: 'User Profile',
+          name: 'Add new land',
           path: 'pages/add-new',
+          component: () => import('@/views/dashboard/pages/UserProfile'),
+        },
+        {
+          name: 'Edit land info',
+          path: 'pages/edit/:id',
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
@@ -40,7 +45,7 @@ export default new Router({
         },
         // Tables
         {
-          name: 'Regular Tables',
+          name: 'Land list',
           path: 'tables/regular-tables',
           component: () => import('@/views/dashboard/tables/RegularTables'),
         },

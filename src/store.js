@@ -15,10 +15,10 @@ export default new Vuex.Store({
         address: 'No.5 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
         area: '100 m2',
         purpose: 'residential',
-        complianceStatus: '',
+        complianceStatus: 'OK',
         ownerName: 'Nguyen Thi A',
         ownerID: '001012',
-        ownerDOB: '23/07/1970',
+        ownerDOB: '1997-12-09',
         ownerPhone: 123123123,
         description: 'Test Description'
       },
@@ -64,6 +64,13 @@ export default new Vuex.Store({
         ...state.landList,
         payload
       ]
+    },
+    EDIT_LAND_INFO (state, payload) {
+      const index = state.landList.findIndex(land => land.id === payload.id);
+      if (index !== -1) {
+        // Replace the land item at that index with the updated data
+        state.landList.splice(index, 1, payload);
+      }
     },
     DELETE_LAND (state, payload) {
       state.landList = state.landList.filter(
