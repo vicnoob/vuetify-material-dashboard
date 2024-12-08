@@ -81,7 +81,7 @@
         :item="{
           title: 'Logout',
           icon: 'mdi-logout',
-          to: '/upgrade',
+          to: '/login',
         }"
       />
     </template>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from './store';
 
 Vue.use(Router)
 
@@ -8,8 +9,21 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/login',
+      name: 'Login',
+      component: () => import('@/views/dashboard/Login'),
+    },
+    {
       path: '/',
       component: () => import('@/views/dashboard/Index'),
+      beforeEnter: (to, from, next) => {
+        // Check if the user is authenticated
+        if (store.getters.isAuthenticated) {
+          next();  // Allow navigation to the Dashboard
+        } else {
+          next('/login');  // Redirect to login if not authenticated
+        }
+      },
       children: [
         // Dashboard
         {

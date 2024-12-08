@@ -95,7 +95,7 @@
           showLabel: true, // Show labels on the chart
           labelInterpolationFnc: (value, index) => {
             // Display purpose name and count
-            return `${value}\n(${this.chartData.series[index]})`;
+            return `${value}\n(${((this.chartData.series[index] / this.landList.length) * 100).toFixed(2)}%)`;
           },
         },
         barChartData: {

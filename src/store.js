@@ -54,7 +54,8 @@ export default new Vuex.Store({
         area: '70 m2',
         purpose: 'residential',
       },
-    ]
+    ],
+    isAuthenticated: false,
   },
   mutations: {
     SET_BAR_IMAGE (state, payload) {
@@ -80,9 +81,23 @@ export default new Vuex.Store({
       state.landList = state.landList.filter(
         i => i.id !== payload.id
       )
-    }
+    },
+    LOGIN(state) {
+      state.isAuthenticated = true;  // Set authenticated to true
+    },
+    LOGOUT(state) {
+      state.isAuthenticated = false;  // Set authenticated to false
+    },
   },
   actions: {
-
+    login({ commit }) {
+      commit('LOGIN');  // Call mutation to change auth status
+    },
+    logout({ commit }) {
+      commit('LOGOUT');  // Call mutation to change auth status
+    },
+  },
+  getters: {
+    isAuthenticated: state => state.isAuthenticated,  // Getter to check if the user is authenticated
   },
 })
