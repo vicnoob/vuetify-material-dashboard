@@ -29,6 +29,11 @@ export default new Router({
           component: () => import('@/views/dashboard/pages/UserProfile'),
         },
         {
+          name: 'Land detail info',
+          path: 'pages/detail/:id',
+          component: () => import('@/views/dashboard/pages/UserProfile'),
+        },
+        {
           name: 'Notifications',
           path: 'components/notifications',
           component: () => import('@/views/dashboard/component/Notifications'),

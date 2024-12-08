@@ -33,7 +33,7 @@
         </thead>
 
         <tbody>
-          <tr v-for="item in landList" :key="item.id">
+          <tr class="clickable" v-for="item in landList" :key="item.id" @click="viewDetail(item)">
             <td>
               <v-img :width="30" :height="30" :src="item.img" />
             </td>
@@ -119,6 +119,9 @@
       editItem(item) {
         console.log('Editing item:', item);
         this.$router.push({ name: 'Edit land info', params: { id: item.id } });
+      },
+      viewDetail(item) {
+        this.$router.push({ name: 'Land detail info', params: { id: item.id } });
       },
       showDeleteDialog(item) {
         this.deleteDialog.visible = true;
