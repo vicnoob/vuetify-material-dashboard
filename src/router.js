@@ -45,12 +45,12 @@ export default new Router({
           component: () => import('@/views/dashboard/tables/RegularTables'),
         },
         // Maps
-        {
-          name: 'Google Maps',
-          path: 'maps/google-maps',
-          component: () => import('@/views/dashboard/maps/GoogleMaps'),
-        },
         // Upgrade
+        {
+          name: 'Statistic',
+          path: 'statistic',
+          component: () => import('@/views/dashboard/Statistic'),
+        },
         {
           name: 'Upgrade',
           path: 'upgrade',

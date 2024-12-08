@@ -15,6 +15,12 @@ export default new Vuex.Store({
         address: 'No.5 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
         area: '100 m2',
         purpose: 'residential',
+        complianceStatus: '',
+        ownerName: 'Nguyen Thi A',
+        ownerID: '001012',
+        ownerDOB: '23/07/1970',
+        ownerPhone: 123123123,
+        description: 'Test Description'
       },
       {
         id: 2,

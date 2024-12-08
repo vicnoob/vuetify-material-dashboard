@@ -129,7 +129,7 @@
         {
           title: 'Thống kê',
           icon: 'mdi-chart-arc',
-          to: '/components/icons',
+          to: '/statistic',
         },
         // {
         //   title: 'icons',
