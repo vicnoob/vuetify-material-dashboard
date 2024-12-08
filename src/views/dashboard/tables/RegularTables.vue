@@ -1,22 +1,18 @@
 <template>
   <v-container id="regular-tables" fluid tag="section">
     <!-- <base-v-component heading="Simple Tables" link="components/simple-tables" /> -->
-    <v-col
-      cols="12"
-      offset="6"
-      class="text-right clickable"
-      @click="goToAddPage"
-      md="6"
-    >
-      <v-icon
-        small
-        color="success"
-        class="ml-2 text-right"
-      >
-        mdi-plus
-      </v-icon>
-      Thêm
-    </v-col>
+
+    <div class="text-right">
+      <v-btn color="success" class="mr-0" @click="goToAddPage">
+        <v-icon
+          small
+          class="ml-2 text-right"
+        >
+          mdi-plus
+        </v-icon>
+        Thêm mới
+      </v-btn>
+    </div>
     <base-material-card
       icon="mdi-clipboard-text"
       title="Danh sách các mảnh đất"
@@ -37,7 +33,7 @@
         </thead>
 
         <tbody>
-          <tr v-for="item in dataTable" :key="item.id">
+          <tr v-for="item in landList" :key="item.id">
             <td>
               <v-img :width="30" :height="30" :src="item.img" />
             </td>
@@ -99,60 +95,27 @@
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
     // name: 'DashboardCoreAppBar',
 
     components: {},
 
     props: {},
-
+    computed: {
+    ...mapState(['landList']),
+    },
     data: () => ({
-      dataTable: [
-        {
-          id: 1,
-          img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'No.5 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
-          area: '100 m2',
-          purpose: 'residential',
-        },
-        {
-          id: 2,
-          img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'No.7 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
-          area: '100 m2',
-          purpose: 'public service',
-        },
-        {
-          id: 3,
-          img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'No.9 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
-          area: '70 m2',
-          purpose: 'residential',
-        },
-        {
-          id: 4,
-          img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'No.2 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
-          area: '70 m2',
-          purpose: 'commercial',
-        },
-        {
-          id: 5,
-          img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
-          address: 'No.4 Ngoc Hoi street, Tu Hiep ward, Thanh Tri district, Ha Noi',
-          area: '70 m2',
-          purpose: 'residential',
-        },
-      ],
       deleteDialog: {
         visible: false,
         item: null
       }
     }),
 
-    computed: {},
-
     methods: {
+      ...mapMutations({
+        deleteLand: 'DELETE_LAND',
+      }),
       editItem(item) {
         console.log('Editing item:', item);
       },
@@ -162,13 +125,15 @@
       },
       deleteItem(item) {
         // Xóa item khỏi danh sách
-        this.dataTable = this.dataTable.filter(i => i.id !== item.id);
+        this.deleteLand(item)
         this.deleteDialog.visible = false;
       },
       goToAddPage() {
-      // Sử dụng $router của Vue Router để chuyển hướng
-      this.$router.push('/pages/add-new');
-    }
+        // Sử dụng $router của Vue Router để chuyển hướng
+        this.$router.push('/pages/add-new');
+      }
+
+
     },
   };
 </script>

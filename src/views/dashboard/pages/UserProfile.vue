@@ -24,6 +24,7 @@
                   md="12"
                 >
                   <v-text-field
+                    v-model="info.address"
                     label="Địa chỉ"
                     class="purple-input"
                   />
@@ -34,6 +35,7 @@
                   md="6"
                 >
                   <v-text-field
+                    v-model="info.area"
                     label="Diện tích"
                     class="purple-input"
                   />
@@ -43,15 +45,17 @@
                   cols="12"
                   md="6"
                 >
-                  <v-text-field
-                    label="Mục đích sử dụng"
-                    class="purple-input"
-                  />
+                <v-select
+                  label="Mục đích sử dụng"
+                  v-model="info.purpose"
+                  :items="purposeList"
+                ></v-select>
                 </v-col>
 
                 <v-col cols="12">
                   <v-text-field
                     label="Link ảnh"
+                    v-model="info.img"
                     class="purple-input"
                   />
                 </v-col>
@@ -61,6 +65,7 @@
                   md="12"
                 >
                   <v-text-field
+                    v-model="info.complianceStatus"
                     label="Tình trạng pháp lý"
                     class="purple-input"
                   />
@@ -72,6 +77,7 @@
                 >
                   <v-text-field
                     label="Tên chủ sở hữu"
+                    v-model="info.ownerName"
                     class="purple-input"
                   />
                 </v-col>
@@ -81,6 +87,7 @@
                 >
                   <v-text-field
                     label="CCCD"
+                    v-model="info.ownerID"
                     class="purple-input"
                   />
                 </v-col>
@@ -88,10 +95,29 @@
                   cols="12"
                   md="6"
                 >
-                  <v-text-field
-                    label="Ngày Sinh"
-                    class="purple-input"
-                  />
+                <v-menu
+                  ref="menu"
+                  v-model="menu"
+                  :close-on-content-click="false"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="auto"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="info.ownerDOB"
+                      label="Ngày sinh"
+                      prepend-icon="mdi-calendar"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    v-model="info.ownerDOB"
+                    @input="menu = false"
+                  ></v-date-picker>
+                </v-menu>
                 </v-col>
                 <v-col
                   cols="12"
@@ -99,6 +125,7 @@
                 >
                   <v-text-field
                     label="Số điện thoại"
+                    v-model="info.ownerPhone"
                     class="purple-input"
                   />
                 </v-col>
@@ -106,8 +133,8 @@
                 <v-col cols="12">
                   <v-textarea
                     class="purple-input"
+                    v-model="info.description"
                     label="Mô tả"
-                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
                   />
                 </v-col>
 
@@ -117,6 +144,7 @@
                 >
                   <v-btn
                     color="success"
+                    @click="addNewItem()"
                     class="mr-0"
                   >
                     Lưu
@@ -127,44 +155,47 @@
           </v-form>
         </base-material-card>
       </v-col>
-
-      <!-- <v-col
-        cols="12"
-        md="4"
-      >
-        <base-material-card
-          class="v-card-profile"
-          avatar="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
-        >
-          <v-card-text class="text-center">
-            <h6 class="display-1 mb-1 grey--text">
-              CEO / CO-FOUNDER
-            </h6>
-
-            <h4 class="display-2 font-weight-light mb-3 black--text">
-              Alec Thompson
-            </h4>
-
-            <p class="font-weight-light grey--text">
-              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-            </p>
-
-            <v-btn
-              color="success"
-              rounded
-              class="mr-0"
-            >
-              Follow
-            </v-btn>
-          </v-card-text>
-        </base-material-card>
-      </v-col> -->
     </v-row>
   </v-container>
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
-    //
+    computed: {
+    ...mapState(['landList']),
+    },
+    methods: {
+      ...mapMutations({
+        addNewLand: 'ADD_NEW_LAND',
+      }),
+      addNewItem() {
+        this.addNewLand({
+          id: this.landList.length + 1,
+          ...this.info
+        })
+        this.$router.push('/tables/regular-tables');
+      },
+    },
+    data: () => ({
+      info: {
+        address: '',
+        area: '',
+        purpose: '',
+        img: '',
+        complianceStatus: '',
+        ownerName: '',
+        ownerID: '',
+        ownerDOB: '',
+        ownerPhone: null,
+        description: ''
+      },
+      menu: false,
+      purposeList: [
+        'residential',
+        'public service',
+        'commercial'
+      ]
+    })
   }
 </script>
