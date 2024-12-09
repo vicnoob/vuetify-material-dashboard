@@ -3,7 +3,7 @@
     <v-row>
       <v-col cols="12" md="12" style="display: flex; justify-content: center;">
         <v-card style="min-width: 500px;">
-          <v-card-title>Login</v-card-title>
+          <v-card-title>Login for Admin</v-card-title>
           <v-card-text>
             <v-form @submit.prevent="handleLogin">
               <v-text-field
@@ -11,6 +11,7 @@
                 label="Username"
                 outlined
                 required
+                prepend-inner-icon="mdi-account"
               ></v-text-field>
               <v-text-field
                 v-model="password"
@@ -18,6 +19,7 @@
                 type="password"
                 outlined
                 required
+                prepend-inner-icon="mdi-lock"
               ></v-text-field>
               <v-btn type="submit" color="primary" block>Login</v-btn>
             </v-form>

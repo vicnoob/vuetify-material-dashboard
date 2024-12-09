@@ -38,7 +38,7 @@
             <th class="primary--text">Ảnh</th>
             <th class="primary--text">ID</th>
             <th class="primary--text">Địa chỉ</th>
-            <th class="primary--text">Diện tích</th>
+            <th class="primary--text">Diện tích (m2)</th>
             <th class="primary--text">Mục đích sử dụng</th>
             <th class="primary--text">Hành động</th>
           </tr>
