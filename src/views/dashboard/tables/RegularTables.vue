@@ -33,7 +33,7 @@
         </thead>
 
         <tbody>
-          <tr class="clickable" v-for="item in landList" :key="item.id" @click="viewDetail(item)">
+          <tr v-for="item in landList" :key="item.id">
             <td>
               <v-img :width="30" :height="30" :src="item.img" />
             </td>
@@ -48,7 +48,7 @@
                 class="mr-2"
                 @click="editItem(item)"
               >
-              mdi-pencil
+                mdi-pencil
               </v-icon>
               <v-icon
                 small
@@ -56,6 +56,14 @@
                 @click="showDeleteDialog(item)"
               >
                 mdi-delete
+              </v-icon>
+              <v-icon
+                small
+                color="info"
+                class="ml-2"
+                @click="viewDetail(item)"
+              >
+                mdi-eye
               </v-icon>
             </td>
           </tr>
