@@ -52,7 +52,7 @@ export default new Router({
         {
           name: 'Statistic',
           path: 'statistic',
-          component: () => import('@/views/dashboard/Statistic'),
+          component: () => import('@/views/dashboard/pages/Statistic'),
         },
       ],
     },
