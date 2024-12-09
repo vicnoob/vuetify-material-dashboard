@@ -39,7 +39,7 @@
 
                 <v-col cols="12">
                   <v-text-field
-                    label="Link ảnh"
+                    label="Ảnh"
                     :readonly="isDetailMode"
                     v-model="info.img"
                     class="purple-input"
