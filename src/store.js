@@ -70,7 +70,7 @@ export default new Vuex.Store({
         description: 'Test Description'
       },
     ],
-    isAuthenticated: false,
+    isAuthenticated: true,
   },
   mutations: {
     SET_BAR_IMAGE (state, payload) {
