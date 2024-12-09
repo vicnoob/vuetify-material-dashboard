@@ -7,6 +7,8 @@ module.exports = {
       sass: {
         sassOptions: {
           quietDeps: true,
+          quiet: true,
+          silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import', 'legacy-js-api', 'slash-div']
         },
       },
     },
