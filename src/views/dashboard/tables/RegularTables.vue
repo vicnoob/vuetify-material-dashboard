@@ -53,7 +53,7 @@
         <tbody>
           <tr v-for="item in filteredLandList" :key="item.id">
             <td>
-              <v-img :width="30" :height="30" :src="item.img" />
+              <v-img v-preview-image="item.img" :width="30" :height="30" :src="item.img" />
             </td>
             <td>{{ item.id }}</td>
             <td>{{ item.address }}</td>
