@@ -12,7 +12,7 @@ export default new Vuex.Store({
       {
         id: 1,
         img: sampleImage,
-        address: 'Số 2 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
+        address: 'Số 2 Ngọc Hồi, xã Tứ Hiệp, huyện Thanh Trì, Hà Nội',
         area: '100',
         purpose: 'Đất ở',
         complianceStatus: 'Có giấy chứng nhận',
@@ -25,7 +25,7 @@ export default new Vuex.Store({
       {
         id: 2,
         img: sampleImage,
-        address: 'Số 3 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
+        address: 'Số 3 Trần Thủ Độ, xã Tứ Hiệp, huyện Thanh Trì, Hà Nội',
         area: '100',
         complianceStatus: 'Quy hoạch',
         purpose: 'Đất công cộng',
@@ -33,7 +33,7 @@ export default new Vuex.Store({
       {
         id: 3,
         img: sampleImage,
-        address: 'Số 5 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
+        address: 'Thôn Cổ Điển, xã Tứ Hiệp, huyện Thanh Trì, Hà Nội',
         area: '70',
         purpose: 'Nông nghiệp',
         complianceStatus: 'Chưa có giấy chứng nhận',
@@ -46,7 +46,7 @@ export default new Vuex.Store({
       {
         id: 4,
         img: sampleImage,
-        address: 'Số 7 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
+        address: 'Số 10 Phan Trọng Tuệ, xã Tứ Hiệp, huyện Thanh Trì, Hà Nội',
         area: '90',
         complianceStatus: 'Quy hoạch',
         purpose: 'Thương mại',
@@ -59,11 +59,11 @@ export default new Vuex.Store({
       {
         id: 5,
         img: sampleImage,
-        address: 'Số 9 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
+        address: 'Thôn Cổ Điển, xã Tứ Hiệp, huyện Thanh Trì, Hà Nội',
         area: '70',
         complianceStatus: 'Thế chấp',
         purpose: 'Nông nghiệp',
-        ownerName: 'Nguyễn Thu H',
+        ownerName: 'Nguyễn Thu Hà',
         ownerID: '0112211688',
         ownerDOB: '1988-07-07',
         ownerPhone: '0981889477',
