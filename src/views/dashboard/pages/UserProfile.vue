@@ -37,15 +37,6 @@
                   ></v-select>
                 </v-col>
 
-                <v-col cols="12">
-                  <v-text-field
-                    label="Ảnh"
-                    :readonly="isDetailMode"
-                    v-model="info.img"
-                    class="purple-input"
-                  />
-                </v-col>
-
                 <v-col cols="12" md="12">
                   <v-select
                     label="Tình trạng pháp lý"
@@ -114,8 +105,12 @@
                     label="Mô tả"
                   />
                 </v-col>
+                <v-col cols="12">
+                  <span>Ảnh</span>
+                  <UploadImages v-model="info.img"/>
+                </v-col>
 
-                <v-col cols="12" class="text-right">
+                <v-col v-if="!isDetailMode" cols="12" class="text-right">
                   <v-btn color="success" @click="save()" class="mr-0">
                     Lưu
                   </v-btn>
@@ -132,6 +127,9 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 export default {
+  components: {
+      UploadImages: () => import('@/views/dashboard/component/UploadImages'),
+    },
   computed: {
     ...mapState(["landList"]),
     landId() {

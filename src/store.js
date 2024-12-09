@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import { sampleImage } from '@/constant'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -11,7 +11,7 @@ export default new Vuex.Store({
     landList: [
       {
         id: 1,
-        img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
+        img: sampleImage,
         address: 'Số 2 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
         area: '100 m2',
         purpose: 'Đất ở',
@@ -24,7 +24,7 @@ export default new Vuex.Store({
       },
       {
         id: 2,
-        img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
+        img: sampleImage,
         address: 'Số 3 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
         area: '100 m2',
         complianceStatus: 'Quy hoạch',
@@ -32,7 +32,7 @@ export default new Vuex.Store({
       },
       {
         id: 3,
-        img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
+        img: sampleImage,
         address: 'Số 5 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
         area: '70 m2',
         purpose: 'Nông nghiệp',
@@ -45,7 +45,7 @@ export default new Vuex.Store({
       },
       {
         id: 4,
-        img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
+        img: sampleImage,
         address: 'Số 7 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
         area: '90 m2',
         complianceStatus: 'Quy hoạch',
@@ -58,7 +58,7 @@ export default new Vuex.Store({
       },
       {
         id: 5,
-        img: 'https://i.ibb.co/ncjkmc3/bird-thumbnail.jpg',
+        img: sampleImage,
         address: 'Số 9 Ngọc Hồi, phường Tứ Hiệp, quận Thanh Trì, Hà Nội',
         area: '70 m2',
         complianceStatus: 'Thế chấp',
