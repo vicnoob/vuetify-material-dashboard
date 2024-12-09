@@ -185,8 +185,8 @@ export default {
       description: "",
     },
     menu: false,
-    purposeList: ["residential", "public service", "commercial"],
-    complianceStatusList: ["Tốt", "Đang tranh chấp", "Trong quy hoạch", "Thế chấp"]
+    purposeList: ["Đất ở", "Đất công cộng", "Thương mại", "Nông nghiệp", "Đất hoang"],
+    complianceStatusList: ["Có giấy chứng nhận", "Chưa có giấy chứng nhận", "Đang tranh chấp", "Quy hoạch", "Thế chấp"]
   }),
 };
 </script>
