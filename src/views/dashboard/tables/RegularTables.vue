@@ -1,9 +1,25 @@
 <template>
-  <v-container id="regular-tables" fluid tag="section">
+  <v-container id="regular-tables" fluid tag="section" class="pt-12">
     <!-- <base-v-component heading="Simple Tables" link="components/simple-tables" /> -->
-
-    <div class="text-right">
-      <v-btn color="success" class="mr-0" @click="goToAddPage">
+    <v-row class="text-right">
+      <v-col cols="12" lg="4" >
+        <v-text-field
+          :label="$t('Tìm kiếm bằng địa chỉ hoặc ID')"
+          v-model="filter.keyword"
+          color="secondary"
+          hide-details
+        >
+        </v-text-field>
+      </v-col>
+      <v-col cols="12" lg="4" >
+        <v-select
+          label="Mục đích sử dụng"
+          v-model="filter.purpose"
+          :items="purposeList"
+        ></v-select>
+      </v-col>
+      <v-col cols="12" lg="4">
+        <v-btn color="success" class="mr-0" @click="goToAddPage">
         <v-icon
           small
           class="ml-2 text-right"
@@ -12,7 +28,9 @@
         </v-icon>
         Thêm mới
       </v-btn>
-    </div>
+      </v-col>
+    </v-row>
+
     <base-material-card
       icon="mdi-clipboard-text"
       title="Danh sách các mảnh đất"
@@ -33,7 +51,7 @@
         </thead>
 
         <tbody>
-          <tr v-for="item in landList" :key="item.id">
+          <tr v-for="item in filteredLandList" :key="item.id">
             <td>
               <v-img :width="30" :height="30" :src="item.img" />
             </td>
@@ -111,13 +129,33 @@
 
     props: {},
     computed: {
-    ...mapState(['landList']),
+      ...mapState(['landList']),
+      filteredLandList() {
+        return this.landList.filter((land) => {
+          // Filter by keyword
+          const keywordMatch =
+            !this.filter.keyword ||
+            land.address.toLowerCase().includes(this.filter.keyword.toLowerCase());
+
+          // Filter by purpose
+          const purposeMatch =
+            !this.filter.purpose || land.purpose === this.filter.purpose;
+
+          // Return true if both conditions are met
+          return keywordMatch && purposeMatch;
+        });
+      }
     },
     data: () => ({
       deleteDialog: {
         visible: false,
         item: null
-      }
+      },
+      filter: {
+        keyword: '',
+        purpose: ''
+      },
+      purposeList: ["Đất ở", "Đất công cộng", "Thương mại", "Nông nghiệp", "Đất hoang"],
     }),
 
     methods: {
