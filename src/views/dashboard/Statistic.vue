@@ -51,11 +51,13 @@
       const data = this.landList.reduce(
         (acc, land) => {
         // Count occurrences
+          const purpose = land.purpose || 'N/A'
           if (!acc.counts[land.purpose]) {
-            acc.counts[land.purpose] = 0;
-            acc.uniquePurposes.push(land.purpose); // Add unique purpose
+            
+            acc.counts[purpose] = 0;
+            acc.uniquePurposes.push(purpose || 'N/A'); // Add unique purpose
           }
-          acc.counts[land.purpose] += 1;
+          acc.counts[purpose] += 1;
 
           return acc;
         },

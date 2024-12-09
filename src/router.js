@@ -25,11 +25,10 @@ export default new Router({
         }
       },
       children: [
-        // Dashboard
         {
-          name: 'Dashboard',
+          name: 'Land list',
           path: '',
-          component: () => import('@/views/dashboard/Dashboard'),
+          component: () => import('@/views/dashboard/tables/RegularTables'),
         },
         // Pages
         {
@@ -63,11 +62,6 @@ export default new Router({
           component: () => import('@/views/dashboard/component/Typography'),
         },
         // Tables
-        {
-          name: 'Land list',
-          path: 'tables/regular-tables',
-          component: () => import('@/views/dashboard/tables/RegularTables'),
-        },
         // Maps
         // Upgrade
         {

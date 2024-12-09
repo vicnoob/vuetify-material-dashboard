@@ -168,7 +168,7 @@ export default {
         this.editLand(this.info);
         this.$toast.success("Bạn đã cập nhật thông tin thành công");
       }
-      this.$router.push("/tables/regular-tables");
+      this.$router.push("/");
     },
   },
   data: () => ({

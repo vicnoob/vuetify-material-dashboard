@@ -107,19 +107,9 @@
     data: () => ({
       items: [
         {
-          icon: 'mdi-view-dashboard',
-          title: 'dashboard',
-          to: '/',
-        },
-        // {
-        //   icon: 'mdi-alarm',
-        //   title: 'user',
-        //   to: '/pages/user',
-        // },
-        {
           icon: 'mdi-clipboard-outline',
           title: 'Danh sách đất',
-          to: '/tables/regular-tables',
+          to: '/',
         },
         {
           title: 'Thêm mới thửa đất',
@@ -165,7 +155,7 @@
       profile () {
         return {
           avatar: true,
-          title: 'Admin 01',
+          title: 'MANALAND',
         }
       },
     },
