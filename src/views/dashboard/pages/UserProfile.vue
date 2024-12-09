@@ -13,7 +13,7 @@
                 <v-col cols="12" md="12">
                   <v-text-field
                     v-model="info.address"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     label="Địa chỉ"
                     class="purple-input"
                   />
@@ -22,7 +22,7 @@
                 <v-col cols="12" md="6">
                   <v-text-field
                     v-model="info.area"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     label="Diện tích"
                     class="purple-input"
                   />
@@ -31,7 +31,7 @@
                 <v-col cols="12" md="6">
                   <v-select
                     label="Mục đích sử dụng"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     v-model="info.purpose"
                     :items="purposeList"
                   ></v-select>
@@ -40,7 +40,7 @@
                 <v-col cols="12">
                   <v-text-field
                     label="Link ảnh"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     v-model="info.img"
                     class="purple-input"
                   />
@@ -49,7 +49,7 @@
                 <v-col cols="12" md="12">
                   <v-select
                     label="Tình trạng pháp lý"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     v-model="info.complianceStatus"
                     :items="complianceStatusList"
                   ></v-select>
@@ -58,7 +58,7 @@
                 <v-col cols="12" md="6">
                   <v-text-field
                     label="Tên chủ sở hữu"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     v-model="info.ownerName"
                     class="purple-input"
                   />
@@ -67,7 +67,7 @@
                   <v-text-field
                     label="CCCD"
                     v-model="info.ownerID"
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     class="purple-input"
                   />
                 </v-col>
@@ -92,14 +92,14 @@
                     </template>
                     <v-date-picker
                       v-model="info.ownerDOB"
-                      :readonly="!isEditMode"
+                      :readonly="isDetailMode"
                       @input="menu = false"
                     ></v-date-picker>
                   </v-menu>
                 </v-col>
                 <v-col cols="12" md="6">
                   <v-text-field
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     label="Số điện thoại"
                     v-model="info.ownerPhone"
                     class="purple-input"
@@ -108,7 +108,7 @@
 
                 <v-col cols="12">
                   <v-textarea
-                    :readonly="!isEditMode"
+                    :readonly="isDetailMode"
                     class="purple-input"
                     v-model="info.description"
                     label="Mô tả"
@@ -140,6 +140,9 @@ export default {
     isEditMode() {
       return this.$route.name === "Edit land info";
     },
+    isDetailMode() {
+      return this.$route.name === "Land detail info";
+    }
   },
   mounted() {
     if (this.landId) {
