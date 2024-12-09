@@ -2,6 +2,15 @@ module.exports = {
   devServer: {
     disableHostCheck: true,
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        sassOptions: {
+          quietDeps: true,
+        },
+      },
+    },
+  },
 
   transpileDependencies: ['vuetify'],
 

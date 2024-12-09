@@ -107,7 +107,7 @@
                 </v-col>
                 <v-col cols="12">
                   <span>Ảnh</span>
-                  <UploadImages v-model="info.img"/>
+                  <UploadImages :isReadonly="isDetailMode" v-model="info.img"/>
                 </v-col>
 
                 <v-col v-if="!isDetailMode" cols="12" class="text-right">
@@ -125,6 +125,7 @@
 </template>
 
 <script>
+import { readonly } from "vue";
 import { mapState, mapMutations } from "vuex";
 export default {
   components: {

@@ -35,6 +35,10 @@ export default {
       type: String,
       default: null,
     },
+    isReadonly: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -49,6 +53,9 @@ export default {
   },
   methods: {
     triggerFileInput() {
+      if (this.isReadonly) {
+        return
+      }
       this.$refs.fileInput.click();
     },
     handleFileInput(event) {
