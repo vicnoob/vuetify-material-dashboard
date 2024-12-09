@@ -94,9 +94,10 @@
         chartOptions: {
           donut: true, // Enable donut mode
           donutWidth: 100, // Width of the donut
+          chartPadding: 50,
+          unsafe: true,
           showLabel: true, // Show labels on the chart
           labelInterpolationFnc: (value, index) => {
-            // Display purpose name and count
             return `${value}\n(${((this.chartData.series[index] / this.landList.length) * 100).toFixed(2)}%)`;
           },
         },
@@ -109,6 +110,7 @@
           axisX: {
             showGrid: true, // Show grid on x-axis
           },
+          chartPadding: 20,
           low: 0,
           high: 5,
           axisY: {
@@ -128,9 +130,11 @@
     },
   }
 </script>
-<style>
+<style scoped>
   .chart-container {
     width: 100%;
     height: 100%;
+    max-width: 600px;
+    max-height: 600px;
   }
 </style>
